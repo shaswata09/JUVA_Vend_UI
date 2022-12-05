@@ -2982,6 +2982,23 @@
                     }
                 },
                 {
+                    "source": "/Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
+                    "from": {
+                        "startLines": "6,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "156,262",
+                        "endColumns": "63,68",
+                        "endOffsets": "215,326"
+                    },
+                    "to": {
+                        "startLines": "661,662",
+                        "startColumns": "4,4",
+                        "startOffsets": "41901,41965",
+                        "endColumns": "63,68",
+                        "endOffsets": "41960,42029"
+                    }
+                },
+                {
                     "source": "/Users/shaswatamitra/.gradle/caches/transforms-3/3e0d478508575b75c79938eb5fb0fb04/transformed/jetified-startup-runtime-1.0.0/res/values/values.xml",
                     "from": {
                         "startLines": "2",
@@ -2996,6 +3013,25 @@
                         "startOffsets": "44420",
                         "endColumns": "82",
                         "endOffsets": "44498"
+                    }
+                },
+                {
+                    "source": "/Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/android/app/src/main/res/values/styles.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "54",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "267"
+                    },
+                    "to": {
+                        "startLines": "828",
+                        "startColumns": "4",
+                        "startOffsets": "60030",
+                        "endLines": "831",
+                        "endColumns": "12",
+                        "endOffsets": "60208"
                     }
                 },
                 {
@@ -3090,23 +3126,6 @@
                     }
                 },
                 {
-                    "source": "/Users/shaswatamitra/Desktop/Files/Work/Projects/JUVA_Vend_UI/android/app/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "49",
-                        "endOffsets": "61"
-                    },
-                    "to": {
-                        "startLines": "698",
-                        "startColumns": "4",
-                        "startOffsets": "44503",
-                        "endColumns": "49",
-                        "endOffsets": "44548"
-                    }
-                },
-                {
                     "source": "/Users/shaswatamitra/.gradle/caches/transforms-3/a6ec09d3f9a35c2cdb66c074ce2dc724/transformed/jetified-autofill-1.1.0/res/values/values.xml",
                     "from": {
                         "startLines": "2,3,19,20,27,32,37,44,53",
@@ -3145,20 +3164,20 @@
                     }
                 },
                 {
-                    "source": "/Users/shaswatamitra/Desktop/Files/Work/Projects/JUVA_Vend_UI/android/app/build/generated/res/resValues/debug/values/gradleResValues.xml",
+                    "source": "/Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/android/app/src/main/res/values/strings.xml",
                     "from": {
-                        "startLines": "6,8",
-                        "startColumns": "4,4",
-                        "startOffsets": "156,262",
-                        "endColumns": "63,68",
-                        "endOffsets": "215,326"
+                        "startLines": "1",
+                        "startColumns": "4",
+                        "startOffsets": "16",
+                        "endColumns": "49",
+                        "endOffsets": "61"
                     },
                     "to": {
-                        "startLines": "661,662",
-                        "startColumns": "4,4",
-                        "startOffsets": "41901,41965",
-                        "endColumns": "63,68",
-                        "endOffsets": "41960,42029"
+                        "startLines": "698",
+                        "startColumns": "4",
+                        "startOffsets": "44503",
+                        "endColumns": "49",
+                        "endOffsets": "44548"
                     }
                 },
                 {
@@ -3233,25 +3252,6 @@
                         "startOffsets": "40547",
                         "endColumns": "53",
                         "endOffsets": "40596"
-                    }
-                },
-                {
-                    "source": "/Users/shaswatamitra/Desktop/Files/Work/Projects/JUVA_Vend_UI/android/app/src/main/res/values/styles.xml",
-                    "from": {
-                        "startLines": "3",
-                        "startColumns": "4",
-                        "startOffsets": "54",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "267"
-                    },
-                    "to": {
-                        "startLines": "828",
-                        "startColumns": "4",
-                        "startOffsets": "60030",
-                        "endLines": "831",
-                        "endColumns": "12",
-                        "endOffsets": "60208"
                     }
                 },
                 {
