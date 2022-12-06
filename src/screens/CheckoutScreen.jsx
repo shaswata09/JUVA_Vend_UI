@@ -9,6 +9,7 @@ import {
   Image,
   Switch,
 } from "react-native";
+import CheckoutButton from "../components/CheckoutScreen/CheckoutButton";
 
 const imageJUVA = "../assets/app_background.png";
 const juvaLogo = "../assets/JUVA_Blueberry_Logo.png";
@@ -37,9 +38,34 @@ const CheckoutScreen = (props) => {
             </TouchableOpacity>
           </View>
           <View style={styles.bodyView}>
-            <Text>Checkout Screen</Text>
+            <View></View>
           </View>
-          <View style={styles.bottomView}></View>
+          <View style={styles.bottomView}>
+            <View style={styles.priceContainer}>
+              <View style={styles.priceTextView}>
+                <Text style={styles.priceText}>Price:</Text>
+              </View>
+              <View style={styles.priceAmountTextView}>
+                <Text style={styles.priceAmountText}>$4.99</Text>
+              </View>
+            </View>
+            <View style={styles.buttonsContainer}>
+              <View style={styles.cancelContainer}>
+                <CheckoutButton
+                  text="Cancel"
+                  textColor="white"
+                  fillColor="#343088"
+                />
+              </View>
+              <View style={styles.payButtonContainer}>
+                <CheckoutButton
+                  text="Pay & Start Coldpress"
+                  textColor="#343088"
+                  fillColor="white"
+                />
+              </View>
+            </View>
+          </View>
           <View style={styles.footerView}>
             <View style={styles.languageView}>
               <Text style={styles.languageText}>ENGLISH</Text>
@@ -105,7 +131,54 @@ const styles = StyleSheet.create({
     flex: 0.2,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  priceContainer: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    color: "black",
+    alignItems: "center",
     flexDirection: "row",
+    justifyContent: "flex-end",
+    width: 700,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 80,
+  },
+  priceTextView: {
+    alignItems: "center",
+    paddingRight: 220,
+    paddingVertical: 25,
+    justifyContent: "center",
+  },
+  priceAmountTextView: {
+    paddingLeft: 50,
+    paddingRight: 45,
+    paddingVertical: 25,
+  },
+  priceText: {
+    fontWeight: "bold",
+    fontSize: 28,
+    color: "black",
+  },
+  priceAmountText: {
+    fontWeight: "bold",
+    fontSize: 24,
+    color: "black",
+  },
+  cancelContainer: {
+    flex: 0.4,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  payButtonContainer: {
+    flex: 0.6,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
