@@ -2,7 +2,7 @@ import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 
 const CheckoutButton = (props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={props.onPress}>
       <View style={{ ...styles.buttonView, backgroundColor: props.fillColor }}>
         <Text style={{ ...styles.buttonText, color: props.textColor }}>
           {props.text}

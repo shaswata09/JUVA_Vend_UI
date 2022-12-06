@@ -38,6 +38,10 @@ const onQRClick = (navigation) => {
   navigation.navigate("Checkout");
 };
 
+const onBlendClick = (navigation) => {
+  navigation.navigate("Checkout");
+};
+
 const HomeScreen = (props) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
@@ -66,23 +70,32 @@ const HomeScreen = (props) => {
                 <HomeBlendIcon
                   img={require(JOHN_LEMON)}
                   imgText={"JOHN LEMON"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
                 <HomeBlendIcon
                   img={require(CITRUS_PSYCH)}
                   imgText={"CITRUS PSYCH"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
-                <HomeBlendIcon img={require(REBOOT)} imgText={"REBOOT"} />
+                <HomeBlendIcon
+                  img={require(REBOOT)}
+                  imgText={"REBOOT"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
+                />
                 <HomeBlendIcon
                   img={require(PRESCRIPTION)}
                   imgText={"PRESCRIPTION"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
                 <HomeBlendIcon
                   img={require(RED_ZEPPELIN)}
                   imgText={"RED ZEPPELIN"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
                 <HomeBlendIcon
                   img={require(UNDERGROUND)}
                   imgText={"UNDERGROUND"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
               </View>
             </View>
@@ -94,14 +107,17 @@ const HomeScreen = (props) => {
                 <HomeBlendIcon
                   img={require(BONE_JOINT)}
                   imgText={"BONE JOINT"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
                 <HomeBlendIcon
                   img={require(IMMUNE_SUPPORT)}
                   imgText={"IMMUNE SUPPORT"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
                 <HomeBlendIcon
                   img={require(MUSCLE_MILK)}
                   imgText={"MUSCLE MILK"}
+                  onPress={onBlendClick.bind(this, props.navigation)}
                 />
               </View>
             </View>
