@@ -56,13 +56,11 @@ const state = {
     "Ingredient 3",
     "Ingredient 4",
     "Ingredient 5",
-    "Ingredient 6",
   ],
   tableData: [
     ["1", "2"],
     ["a", "b"],
     ["1", "2"],
-    ["a", "b"],
     ["a", "b"],
     ["a", "b"],
   ],
@@ -118,11 +116,11 @@ const CheckoutScreen = (props) => {
                         dataSets: [
                           {
                             values: [
-                              { value: 45, label: "Sandwiches" },
-                              { value: 21, label: "Salads" },
-                              { value: 15, label: "Soup" },
-                              { value: 9, label: "Beverages" },
-                              { value: 10, label: "Desserts" },
+                              { value: 45, label: "Ingredient 1" },
+                              { value: 21, label: "Ingredient 2" },
+                              { value: 15, label: "Ingredient 3" },
+                              { value: 9, label: "Ingredient 4" },
+                              { value: 10, label: "Ingredient 5" },
                             ],
                             label: "",
                             config: {
