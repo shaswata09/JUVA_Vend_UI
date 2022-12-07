@@ -10,11 +10,21 @@ import {
   processColor,
 } from "react-native";
 import { RadarChart, PieChart } from "react-native-charts-wrapper";
+import {
+  Table,
+  TableWrapper,
+  Row,
+  Rows,
+  Col,
+  Cols,
+  Cell,
+} from "react-native-table-component";
 
 import CheckoutButton from "../components/CheckoutScreen/CheckoutButton";
 
 const imageJUVA = "../assets/app_background.png";
 const juvaLogo = "../assets/JUVA_Blueberry_Logo.png";
+const blendImage = "../assets/juice_bottle.png";
 
 const onMainLogoClick = (navigation) => {
   navigation.pop();
@@ -35,8 +45,27 @@ const handleSelect = (event) => {
   } else {
     this.setState({ ...this.state, selectedEntry: JSON.stringify(entry) });
   }
-
   console.log(event.nativeEvent);
+};
+
+const state = {
+  tableHead: ["Ingredients", "Calorie", "Fat"],
+  tableTitle: [
+    "Ingredient 1",
+    "Ingredient 2",
+    "Ingredient 3",
+    "Ingredient 4",
+    "Ingredient 5",
+    "Ingredient 6",
+  ],
+  tableData: [
+    ["1", "2"],
+    ["a", "b"],
+    ["1", "2"],
+    ["a", "b"],
+    ["a", "b"],
+    ["a", "b"],
+  ],
 };
 
 const CheckoutScreen = (props) => {
@@ -240,7 +269,38 @@ const CheckoutScreen = (props) => {
                   </View>
                 </View>
               </View>
-              <View style={styles.blendIngredientsContainer}></View>
+              <View style={styles.blendIngredientsContainer}>
+                <View style={styles.tableContainer}>
+                  <Table borderStyle={{ borderWidth: 1 }}>
+                    <Row
+                      data={state.tableHead}
+                      flexArr={[2, 1, 1]}
+                      style={styles.head}
+                      textStyle={styles.text}
+                    />
+                    <TableWrapper style={styles.wrapper}>
+                      <Col
+                        data={state.tableTitle}
+                        style={styles.title}
+                        heightArr={[30, 30]}
+                        textStyle={styles.text}
+                      />
+                      <Rows
+                        data={state.tableData}
+                        flexArr={[1]}
+                        style={styles.row}
+                        textStyle={styles.text}
+                      />
+                    </TableWrapper>
+                  </Table>
+                </View>
+                <View style={styles.blendImageContainer}>
+                  <Image
+                    source={require(blendImage)}
+                    style={styles.blendImage}
+                  />
+                </View>
+              </View>
             </View>
           </View>
           <View style={styles.bottomView}>
@@ -445,6 +505,44 @@ const styles = StyleSheet.create({
   },
   blendIngredientsContainer: {
     flex: 0.5,
+  },
+  tableContainer: {
+    flex: 0.5,
+    paddingLeft: 10,
+    paddingRight: 40,
+    paddingTop: 40,
+    backgroundColor: "transparent",
+  },
+  head: {
+    height: 40,
+    backgroundColor: "#f1f8ff",
+  },
+  wrapper: {
+    flexDirection: "row",
+  },
+  title: {
+    flex: 1,
+    backgroundColor: "#f6f8fa",
+  },
+  row: {
+    height: 30,
+  },
+  text: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  blendImageContainer: {
+    flex: 0.5,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 40,
+    paddingRight: 180,
+  },
+  blendImage: {
+    resizeMode: "contain",
+    width: 150,
+    height: 200,
   },
 });
 
