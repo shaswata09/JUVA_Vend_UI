@@ -1,6 +1,6 @@
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 
-const CheckoutButton = (props) => {
+const SubmitButton = (props) => {
   return (
     <TouchableOpacity onPress={props.onPress}>
       <View style={{ ...styles.buttonView, backgroundColor: props.fillColor }}>
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   buttonText: {
-    paddingVertical: 30,
-    paddingHorizontal: 70,
+    paddingVertical: 15,
+    paddingHorizontal: 75,
     fontSize: 22,
     fontWeight: "bold",
     color: "white",
   },
 });
 
-export default CheckoutButton;
+export default SubmitButton;
