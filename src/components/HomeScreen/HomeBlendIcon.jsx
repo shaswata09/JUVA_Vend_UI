@@ -1,8 +1,8 @@
-import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-const HomeBlendIcon = props => {
+const HomeBlendIcon = (props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={props.onPress}>
       <View style={styles.blendView}>
         <View style={styles.imageView}>
           <Image source={props.img} style={styles.image} />
@@ -17,7 +17,7 @@ const HomeBlendIcon = props => {
 
 const styles = StyleSheet.create({
   blendView: {
-    shadowColor: 'black',
+    shadowColor: "black",
     // shadowOpacity: 0.26,
     // shadowOffset: {width: 0, height: 2},
     // shadowRadius: 8,
@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
     // borderRadius: 10,
     // backgroundColor: 'white',
     // marginHorizontal: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   imageView: {
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 15,
   },
   image: {
@@ -38,12 +38,12 @@ const styles = StyleSheet.create({
   },
   textView: {
     paddingTop: 15,
-    alignItems: 'center',
+    alignItems: "center",
     marginRight: 12,
     width: 110,
   },
   text: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 14,
   },
 });

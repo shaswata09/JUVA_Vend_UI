@@ -2,19 +2,70 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
   Image,
   Switch,
+  processColor,
 } from "react-native";
+import { RadarChart, PieChart } from "react-native-charts-wrapper";
+import {
+  Table,
+  TableWrapper,
+  Row,
+  Rows,
+  Col,
+  Cols,
+  Cell,
+} from "react-native-table-component";
+
+import CheckoutButton from "../components/CheckoutScreen/CheckoutButton";
 
 const imageJUVA = "../assets/app_background.png";
 const juvaLogo = "../assets/JUVA_Blueberry_Logo.png";
+const blendImage = "../assets/juice_bottle.png";
 
 const onMainLogoClick = (navigation) => {
+  navigation.pop();
+};
+
+const onCancelPress = (navigation) => {
+  navigation.pop();
+};
+
+const onPayPress = (navigation) => {
   navigation.navigate("Feedback");
+};
+
+const handleSelect = (event) => {
+  let entry = event.nativeEvent;
+  if (entry == null) {
+    this.setState({ ...this.state, selectedEntry: null });
+  } else {
+    this.setState({ ...this.state, selectedEntry: JSON.stringify(entry) });
+  }
+  console.log(event.nativeEvent);
+};
+
+const state = {
+  tableHead: ["Ingredients", "Calorie", "Fat"],
+  tableTitle: [
+    "Ingredient 1",
+    "Ingredient 2",
+    "Ingredient 3",
+    "Ingredient 4",
+    "Ingredient 5",
+    "Ingredient 6",
+  ],
+  tableData: [
+    ["1", "2"],
+    ["a", "b"],
+    ["1", "2"],
+    ["a", "b"],
+    ["a", "b"],
+    ["a", "b"],
+  ],
 };
 
 const CheckoutScreen = (props) => {
@@ -37,9 +88,257 @@ const CheckoutScreen = (props) => {
             </TouchableOpacity>
           </View>
           <View style={styles.bodyView}>
-            <Text>Checkout Screen</Text>
+            <View style={styles.blendNameContainer}>
+              <View style={styles.blendNameView}>
+                <Text style={styles.blendNameText}>Blend Name</Text>
+              </View>
+            </View>
+            <View style={styles.blendDetailsContainer}>
+              <View style={styles.blendChartContainer}>
+                <View
+                  style={{
+                    flex: 0.4,
+                    backgroundColor: "#00000010",
+                    color: "#FFFFFF",
+                    borderTopLeftRadius: 60,
+                    borderTopRightRadius: 60,
+                  }}
+                >
+                  <View style={styles.container}>
+                    <PieChart
+                      style={styles.chart}
+                      logEnabled={true}
+                      chartBackgroundColor={processColor("transparent")}
+                      chartDescription={{
+                        text: "",
+                        textSize: 0,
+                        textColor: processColor("black"),
+                      }}
+                      data={{
+                        dataSets: [
+                          {
+                            values: [
+                              { value: 45, label: "Sandwiches" },
+                              { value: 21, label: "Salads" },
+                              { value: 15, label: "Soup" },
+                              { value: 9, label: "Beverages" },
+                              { value: 10, label: "Desserts" },
+                            ],
+                            label: "",
+                            config: {
+                              colors: [
+                                processColor("#C0FF8C"),
+                                processColor("#FFF78C"),
+                                processColor("#FFD08C"),
+                                processColor("#8CEAFF"),
+                                processColor("#FF8C9D"),
+                              ],
+                              valueTextSize: 16,
+                              valueTextColor: processColor("black"),
+                              sliceSpace: 5,
+                              selectionShift: 13,
+                              // xValuePosition: "OUTSIDE_SLICE",
+                              // yValuePosition: "OUTSIDE_SLICE",
+                              valueFormatter: "#.#'%'",
+                              valueLineColor: processColor("green"),
+                              valueLinePart1Length: 0.5,
+                            },
+                          },
+                        ],
+                      }}
+                      legend={{
+                        enabled: true,
+                        textSize: 17,
+                        form: "CIRCLE",
+
+                        horizontalAlignment: "LEFT",
+                        verticalAlignment: "CENTER",
+                        orientation: "VERTICAL",
+                        wordWrapEnabled: true,
+                      }}
+                      highlights={[{ x: 2 }]}
+                      extraOffsets={{ left: 0, top: 0, right: 0, bottom: 0 }}
+                      entryLabelColor={processColor("green")}
+                      entryLabelTextSize={20}
+                      entryLabelFontFamily={"HelveticaNeue-Medium"}
+                      drawEntryLabels={false}
+                      rotationEnabled={true}
+                      rotationAngle={45}
+                      usePercentValues={true}
+                      styledCenterText={{
+                        text: "Pie center text!",
+                        color: processColor("transparent"),
+                        fontFamily: "HelveticaNeue-Medium",
+                        size: 15,
+                      }}
+                      centerTextRadiusPercent={100}
+                      holeRadius={40}
+                      holeColor={processColor("#f0f0f0")}
+                      transparentCircleRadius={45}
+                      transparentCircleColor={processColor("#f0f0f088")}
+                      maxAngle={350}
+                      // onSelect={handleSelect.bind(this)}
+                      // onChange={(event) => console.log(event.nativeEvent)}
+                    />
+                  </View>
+                </View>
+                <View
+                  style={{
+                    flex: 0.6,
+                    backgroundColor: "#00000010",
+                    color: "#FFFFFF",
+                    borderBottomLeftRadius: 60,
+                    borderBottomRightRadius: 60,
+                  }}
+                >
+                  <View style={styles.container}>
+                    <RadarChart
+                      style={styles.chart}
+                      data={{
+                        dataSets: [
+                          {
+                            values: [
+                              { value: 100 },
+                              { value: 110 },
+                              { value: 105 },
+                              { value: 115 },
+                            ],
+                            label: "DS 1",
+                            config: {
+                              color: processColor("#FF8C9D"),
+                              drawFilled: true,
+                              fillColor: processColor("#FF8C9D"),
+                              fillAlpha: 100,
+                              lineWidth: 2,
+                            },
+                          },
+                          {
+                            values: [
+                              { value: 115 },
+                              { value: 100 },
+                              { value: 105 },
+                              { value: 110 },
+                            ],
+                            label: "DS 2",
+                            config: {
+                              color: processColor("#C0FF8C"),
+                              drawFilled: true,
+                              fillColor: processColor("#C0FF8C"),
+                              fillAlpha: 200,
+                              lineWidth: 1,
+                            },
+                          },
+                          {
+                            values: [
+                              { value: 105 },
+                              { value: 115 },
+                              { value: 121 },
+                              { value: 110 },
+                            ],
+                            label: "DS 3",
+                            config: {
+                              color: processColor("#8CEAFF"),
+                              drawFilled: true,
+                              fillColor: processColor("#8CEAFF"),
+                            },
+                          },
+                        ],
+                      }}
+                      xAxis={{
+                        valueFormatter: ["Bone", "Muscle", "Energy", "BMR"],
+                        textSize: 14,
+                      }}
+                      yAxis={{ drawLabels: false }}
+                      chartDescription={{ text: "" }}
+                      legend={{
+                        enabled: false,
+                        textSize: 14,
+                        form: "CIRCLE",
+                        wordWrapEnabled: false,
+                      }}
+                      drawWeb={true}
+                      webLineWidth={2}
+                      webLineWidthInner={2}
+                      webAlpha={355}
+                      webColor={processColor("red")}
+                      webColorInner={processColor("gray")}
+                      skipWebLineCount={1}
+                      // onSelect={handleSelect.bind(this)}
+                      // onChange={(event) => console.log(event.nativeEvent)}
+                    />
+                  </View>
+                </View>
+              </View>
+              <View style={styles.blendIngredientsContainer}>
+                <View style={styles.tableContainer}>
+                  <Table borderStyle={{ borderWidth: 1 }}>
+                    <Row
+                      data={state.tableHead}
+                      flexArr={[2, 1, 1]}
+                      style={styles.head}
+                      textStyle={styles.text}
+                    />
+                    <TableWrapper style={styles.wrapper}>
+                      <Col
+                        data={state.tableTitle}
+                        style={styles.title}
+                        heightArr={[30, 30]}
+                        textStyle={styles.text}
+                      />
+                      <Rows
+                        data={state.tableData}
+                        flexArr={[1]}
+                        style={styles.row}
+                        textStyle={styles.text}
+                      />
+                    </TableWrapper>
+                  </Table>
+                </View>
+                <View style={styles.blendImageContainer}>
+                  <Image
+                    source={require(blendImage)}
+                    style={styles.blendImage}
+                  />
+                </View>
+              </View>
+            </View>
           </View>
-          <View style={styles.bottomView}></View>
+          <View style={styles.bottomView}>
+            <View style={styles.blendTipsContainer}>
+              <View style={styles.blendTipsView}>
+                <Text style={styles.blendTipsText}>
+                  Some unknown facts, tips, and insights for customers to learn
+                  and get inspired.
+                </Text>
+              </View>
+            </View>
+            <View style={styles.priceContainer}>
+              <View style={styles.priceTextView}>
+                <Text style={styles.priceText}>Price:</Text>
+              </View>
+              <View style={styles.priceAmountTextView}>
+                <Text style={styles.priceAmountText}>$4.99</Text>
+              </View>
+            </View>
+            <View style={styles.buttonsContainer}>
+              <View style={styles.cancelContainer}>
+                <CheckoutButton
+                  text="Cancel"
+                  textColor="white"
+                  fillColor="#343088"
+                  onPress={onCancelPress.bind(this, props.navigation)}
+                />
+              </View>
+              <View style={styles.payButtonContainer}>
+                <CheckoutButton
+                  text="Pay & Start Coldpress"
+                  textColor="#343088"
+                  fillColor="white"
+                  onPress={onPayPress.bind(this, props.navigation)}
+                />
+              </View>
+            </View>
+          </View>
           <View style={styles.footerView}>
             <View style={styles.languageView}>
               <Text style={styles.languageText}>ENGLISH</Text>
@@ -74,7 +373,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
   headerView: {
-    flex: 0.1,
+    flex: 0.05,
     alignItems: "center",
   },
   mainLogo: {
@@ -82,15 +381,14 @@ const styles = StyleSheet.create({
     height: 80,
   },
   bodyView: {
-    flex: 0.5,
+    flex: 0.55,
     alignItems: "center",
-    justifyContent: "space-evenly",
+    justifyContent: "space-between",
   },
   footerView: {
     flex: 0.05,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 5,
     flexDirection: "row",
   },
   languageView: {
@@ -105,7 +403,146 @@ const styles = StyleSheet.create({
     flex: 0.2,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: 50,
+  },
+  priceContainer: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    color: "black",
+    alignItems: "center",
     flexDirection: "row",
+    justifyContent: "flex-end",
+    width: 700,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 50,
+  },
+  priceTextView: {
+    alignItems: "center",
+    paddingRight: 220,
+    paddingVertical: 25,
+    justifyContent: "center",
+  },
+  priceAmountTextView: {
+    paddingLeft: 50,
+    paddingRight: 45,
+    paddingVertical: 25,
+  },
+  priceText: {
+    fontWeight: "bold",
+    fontSize: 28,
+    color: "black",
+  },
+  priceAmountText: {
+    fontWeight: "bold",
+    fontSize: 24,
+    color: "black",
+  },
+  cancelContainer: {
+    flex: 0.4,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  payButtonContainer: {
+    flex: 0.6,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  blendNameText: {
+    fontSize: 28,
+    color: "black",
+  },
+  blendNameView: {
+    borderWidth: 1,
+    width: 500,
+    alignItems: "center",
+    paddingVertical: 5,
+    borderRadius: 10,
+    borderStyle: "dashed",
+  },
+  blendNameContainer: {
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
+    paddingVertical: 25,
+    width: 700,
+    alignItems: "center",
+  },
+  blendTipsContainer: {
+    borderTopWidth: 1,
+    paddingVertical: 25,
+    width: 700,
+    alignItems: "center",
+  },
+  blendTipsView: {
+    borderWidth: 1,
+    width: 500,
+    alignItems: "center",
+    paddingVertical: 15,
+    borderRadius: 10,
+    borderStyle: "dashed",
+  },
+  blendTipsText: {
+    fontSize: 20,
+    color: "black",
+    textAlign: "center",
+  },
+  blendDetailsContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  chart: {
+    flex: 1,
+  },
+  blendChartContainer: {
+    padding: 40,
+    flex: 0.5,
+  },
+  blendIngredientsContainer: {
+    flex: 0.5,
+  },
+  tableContainer: {
+    flex: 0.5,
+    paddingLeft: 10,
+    paddingRight: 40,
+    paddingTop: 40,
+    backgroundColor: "transparent",
+  },
+  head: {
+    height: 40,
+    backgroundColor: "#f1f8ff",
+  },
+  wrapper: {
+    flexDirection: "row",
+  },
+  title: {
+    flex: 1,
+    backgroundColor: "#f6f8fa",
+  },
+  row: {
+    height: 30,
+  },
+  text: {
+    textAlign: "center",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  blendImageContainer: {
+    flex: 0.5,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingVertical: 40,
+    paddingRight: 180,
+  },
+  blendImage: {
+    resizeMode: "contain",
+    width: 150,
+    height: 200,
   },
 });
 
