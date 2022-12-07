@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   View,
   Text,
-  Button,
   StyleSheet,
   ImageBackground,
   TouchableOpacity,
@@ -10,7 +9,7 @@ import {
   Switch,
   processColor,
 } from "react-native";
-import { LineChart, PieChart } from "react-native-charts-wrapper";
+import { RadarChart, PieChart } from "react-native-charts-wrapper";
 
 import CheckoutButton from "../components/CheckoutScreen/CheckoutButton";
 
@@ -69,7 +68,7 @@ const CheckoutScreen = (props) => {
               <View style={styles.blendChartContainer}>
                 <View
                   style={{
-                    flex: 0.5,
+                    flex: 0.4,
                     backgroundColor: "#00000010",
                     color: "#FFFFFF",
                     borderTopLeftRadius: 60,
@@ -120,16 +119,16 @@ const CheckoutScreen = (props) => {
                       }}
                       legend={{
                         enabled: true,
-                        textSize: 18,
+                        textSize: 17,
                         form: "CIRCLE",
 
-                        horizontalAlignment: "RIGHT",
+                        horizontalAlignment: "LEFT",
                         verticalAlignment: "CENTER",
                         orientation: "VERTICAL",
                         wordWrapEnabled: true,
                       }}
                       highlights={[{ x: 2 }]}
-                      extraOffsets={{ left: 5, top: 5, right: 5, bottom: 5 }}
+                      extraOffsets={{ left: 0, top: 0, right: 0, bottom: 0 }}
                       entryLabelColor={processColor("green")}
                       entryLabelTextSize={20}
                       entryLabelFontFamily={"HelveticaNeue-Medium"}
@@ -154,7 +153,92 @@ const CheckoutScreen = (props) => {
                     />
                   </View>
                 </View>
-                <View></View>
+                <View
+                  style={{
+                    flex: 0.6,
+                    backgroundColor: "#00000010",
+                    color: "#FFFFFF",
+                    borderBottomLeftRadius: 60,
+                    borderBottomRightRadius: 60,
+                  }}
+                >
+                  <View style={styles.container}>
+                    <RadarChart
+                      style={styles.chart}
+                      data={{
+                        dataSets: [
+                          {
+                            values: [
+                              { value: 100 },
+                              { value: 110 },
+                              { value: 105 },
+                              { value: 115 },
+                            ],
+                            label: "DS 1",
+                            config: {
+                              color: processColor("#FF8C9D"),
+                              drawFilled: true,
+                              fillColor: processColor("#FF8C9D"),
+                              fillAlpha: 100,
+                              lineWidth: 2,
+                            },
+                          },
+                          {
+                            values: [
+                              { value: 115 },
+                              { value: 100 },
+                              { value: 105 },
+                              { value: 110 },
+                            ],
+                            label: "DS 2",
+                            config: {
+                              color: processColor("#C0FF8C"),
+                              drawFilled: true,
+                              fillColor: processColor("#C0FF8C"),
+                              fillAlpha: 200,
+                              lineWidth: 1,
+                            },
+                          },
+                          {
+                            values: [
+                              { value: 105 },
+                              { value: 115 },
+                              { value: 121 },
+                              { value: 110 },
+                            ],
+                            label: "DS 3",
+                            config: {
+                              color: processColor("#8CEAFF"),
+                              drawFilled: true,
+                              fillColor: processColor("#8CEAFF"),
+                            },
+                          },
+                        ],
+                      }}
+                      xAxis={{
+                        valueFormatter: ["Bone", "Muscle", "Energy", "BMR"],
+                        textSize: 14,
+                      }}
+                      yAxis={{ drawLabels: false }}
+                      chartDescription={{ text: "" }}
+                      legend={{
+                        enabled: false,
+                        textSize: 14,
+                        form: "CIRCLE",
+                        wordWrapEnabled: false,
+                      }}
+                      drawWeb={true}
+                      webLineWidth={2}
+                      webLineWidthInner={2}
+                      webAlpha={355}
+                      webColor={processColor("red")}
+                      webColorInner={processColor("gray")}
+                      skipWebLineCount={1}
+                      // onSelect={handleSelect.bind(this)}
+                      // onChange={(event) => console.log(event.nativeEvent)}
+                    />
+                  </View>
+                </View>
               </View>
               <View style={styles.blendIngredientsContainer}></View>
             </View>
