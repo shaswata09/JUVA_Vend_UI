@@ -1356,6 +1356,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable circle_marker
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1395,6 +1396,13 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable oval_marker
+drawable rectangle_marker
+drawable rectangle_marker_left
+drawable rectangle_marker_right
+drawable rectangle_marker_top
+drawable rectangle_marker_top_left
+drawable rectangle_marker_top_right
 drawable redbox_top_border_background
 drawable rn_edit_text_material
 drawable test_custom_background
@@ -1614,6 +1622,8 @@ id notification_main_column_container
 id off
 id on
 id outline
+id oval_markerContent
+id oval_tvContent
 id parallax
 id parentPanel
 id parent_matrix
@@ -1630,6 +1640,8 @@ id progress_circular
 id progress_horizontal
 id radio
 id react_test_id
+id rectangle_markerContent
+id rectangle_tvContent
 id right
 id right_icon
 id right_side
@@ -1802,6 +1814,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout autofill_inline_suggestion
+layout circle_marker
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1854,6 +1867,8 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout oval_marker
+layout rectangle_marker
 layout redbox_item_frame
 layout redbox_item_title
 layout redbox_view

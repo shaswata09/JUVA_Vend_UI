@@ -30,5 +30,8 @@ com.juva_vend_ui.app-mergeDebugResources-28 /Users/shaswatamitra/Desktop/Files/W
 com.juva_vend_ui.app-merged_res-29 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/android/app/build/intermediates/merged_res/debug
 com.juva_vend_ui.app-debug-30 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/android/app/src/debug/res
 com.juva_vend_ui.app-main-31 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/android/app/src/main/res
-com.juva_vend_ui.app-packaged_res-32 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
-com.juva_vend_ui.app-packaged_res-33 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.juva_vend_ui.app-packaged_res-32 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-charts-wrapper/android/build/intermediates/packaged_res/debug
+com.juva_vend_ui.app-packaged_res-33 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-safe-area-context/android/build/intermediates/packaged_res/debug
+com.juva_vend_ui.app-packaged_res-34 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-screens/android/build/intermediates/packaged_res/debug
+com.juva_vend_ui.app-packaged_res-35 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-svg/android/build/intermediates/packaged_res/debug
+com.juva_vend_ui.app-packaged_res-36 /Users/shaswatamitra/Desktop/Files/Work/Projects/github/JUVA_Vend_UI/node_modules/react-native-vector-icons/android/build/intermediates/packaged_res/debug
